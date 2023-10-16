@@ -16,7 +16,7 @@ title: Student Blog
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color:black;
+            background-color:white;
         }
          header {
             background-color: #333;
@@ -31,7 +31,7 @@ title: Student Blog
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background-color:black;
+            background-color:white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             overflow: hidden;
