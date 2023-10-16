@@ -64,18 +64,18 @@ title: Student Blog
 </head>
 <body>
     <div class="container">
-        <h1>Daily Study Time Tracker</h1>
-        <input type="number" id="study-time" placeholder="Enter study time (minutes)">
+        <h1>Daily Instrument Practice  Time Tracker</h1>
+        <input type="number" id="study-time" placeholder="Enter instrument practice time (minutes)">
         <br><br>
         <button id="save-button">Save</button>
         <!-- Weekly Study Log Display -->
         <div id="weekly-log">
-            <h2>Weekly Study Log</h2>
+            <h2>Weekly  Instrument Practice  Log</h2>
             <table>
                 <thead>
                     <tr>
                         <th>Date</th>
-                        <th>Study Time (minutes)</th>
+                        <th> Instrument Practice Time (minutes)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -98,12 +98,12 @@ title: Student Blog
                 const studyData = JSON.parse(localStorage.getItem("studyData")) || {};
                 studyData[currentDate] = parseInt(studyTime);
                 localStorage.setItem("studyData", JSON.stringify(studyData));
-                alert(`Study time (${studyTime} minutes) saved for ${currentDate}`);
+                alert(`Instrument practice  time (${studyTime} minutes) saved for ${currentDate}`);
                 document.getElementById("study-time").value = "";
                 // Refresh the study log display
                 displayWeeklyLog();
             } else {
-                alert("Please enter a valid study time.");
+                alert("Please enter a valid instrument time.");
             }
         });
         // Function to display the weekly study log
