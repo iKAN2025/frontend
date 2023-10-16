@@ -4,13 +4,14 @@ title: Student Blog
 permalink: /tracker
 ---
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Instrument Practice Tracker</title>
     <style>
-        body {
+       body {
             background-image: url({{site.baseurl}}/images/instrument_gifbg.gif);;
             background-size: contain;
             background-repeat: no-repeat;
@@ -64,16 +65,16 @@ permalink: /tracker
 <body>
     <div class="container">
         <h1>Name</h1>
-        <input type="name" id="name" placeholder="Enter first name">
+        <input type="text" id="name" placeholder="Enter first name">
         <h1>Instrument</h1>
-        <input type="instrument" id="instrument" placeholder="Enter instrument name">
+        <input type="text" id="instrument" placeholder="Enter instrument name">
         <h1>Number of Minutes Practiced</h1>
         <input type="number" id="practice-time" placeholder="Enter practice time (minutes)">
         <br><br>
         <button id="save-button">Save</button>
         <!-- Weekly Practice Log Display -->
         <div id="weekly-log">
-            <h2>Weekly Practice Log</h2>
+            <h2>Weekly Instrument  Practice Time  Log</h2>
             <table>
                 <thead>
                     <tr>
@@ -82,7 +83,7 @@ permalink: /tracker
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Study log entries will be displayed here -->
+                    <!-- Practice log entries will be displayed here -->
                 </tbody>
             </table>
         </div>
@@ -109,12 +110,12 @@ permalink: /tracker
                 alert("Please enter a valid practice time.");
             }
         });
-        // Function to display the weekly practice log
+  // Function to display the weekly practice log
         function displayWeeklyLog() {
             const practiceData = JSON.parse(localStorage.getItem("practiceData")) || {};
             const tableBody = document.querySelector("#weekly-log table tbody");
             tableBody.innerHTML = "";
-            for (const date in studyData) {
+            for (const date in practiceData) {
                 const row = tableBody.insertRow();
                 const cellDate = row.insertCell(0);
                 const cellTime = row.insertCell(1);
@@ -122,7 +123,7 @@ permalink: /tracker
                 cellTime.textContent = practiceData[date];
             }
         }
-        // Call the function to display the weekly practice log when the page loads
+//Call the function to display the weekly practice log when the page loads
         displayWeeklyLog();
     </script>
 </body>
