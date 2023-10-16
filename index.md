@@ -77,8 +77,6 @@ title: Student Blog
     </section>
 
 
-   <footer>
-        &copy; 2023 Instruments Page
-    </footer>
+  
 </body>
 </html>
