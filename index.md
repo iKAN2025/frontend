@@ -54,7 +54,7 @@ title: Student Blog
 
   <section id="string">
         <h2>String Instruments</h2>
-        <p>String instruments produce sound by vibrating strings. Examples include guitars, violins, cellos, and pianos.</p>
+        <p>String instruments produce sound by vibrating strings. Examples include guitars, violins, cellos, and harps.</p>
         <!-- Add more information and images about string instruments -->
         <img src="./images/string instruments.jpg">
     </section>
