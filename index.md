@@ -79,7 +79,7 @@ title: Student Blog
 <img src="./images/string instruments.jpg" style="float:left;position:relative;left:30px;top:100px">
 <img src="./images/wind instruments.jpg" style="float:right;position:relative;right:30px;top:150px">
 <img src="./images/percussion instruments.jpg" style="float:left;position:relative;left:30px;top:200px">
-<img src="./images/electronic instruments.jpg" style="float:right;position:relative;right:30px;top:250px>
+<img src="./images/electronic instruments.jpg" style="float:right;position:relative;right:30px;top:250px">
   
 </body>
 </html>
