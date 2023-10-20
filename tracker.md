@@ -15,7 +15,7 @@ permalink: /tracker
             background-image: url({{site.baseurl}}/images/instrument_gifbg.gif);;
             background-size: contain;
             background-repeat: no-repeat;
-            background-attachment: fixed;
+            background-attachment: local;
             font-family: 'Segoe UI', sans-serif;
         }
         .container {
@@ -126,5 +126,9 @@ permalink: /tracker
 //Call the function to display the weekly practice log when the page loads
         displayWeeklyLog();
     </script>
+
 </body>
 </html>
+
+
+
