@@ -76,7 +76,7 @@ title: Student Blog
         <!-- Add more information and images about electronic instruments -->
     </section>
 
-
+<img src="./images/string instruments.jpg">
   
 </body>
 </html>
