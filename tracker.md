@@ -3,7 +3,7 @@ layout: default
 title: Student Blog
 permalink: /tracker
 ---
-
+<!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
 
 <html lang="en">
 <head>
@@ -11,11 +11,11 @@ permalink: /tracker
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Instrument Practice Tracker</title>
     <style>
-       body {
-            background-image: url({{site.baseurl}}/images/instrument_gifbg.gif);;
+        body {
+            background-image: url('your-image-url-here'); /* Replace 'your-image-url-here' with your image URL */
             background-size: contain;
             background-repeat: no-repeat;
-            background-attachment: local;
+            background-attachment: fixed;
             font-family: 'Segoe UI', sans-serif;
         }
         .container {
@@ -24,17 +24,10 @@ permalink: /tracker
             background-color: rgb(183, 255, 217);
             border-radius: 10px;
             margin: 50px auto;
-            max-width: 400px;
+            max-width: 600px;
         }
         h1 {
             color: #333;
-        }
-        #study-time {
-            font-size: 24px;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: center;
         }
         #save-button {
             background-color: #8257B4;
@@ -65,7 +58,7 @@ permalink: /tracker
 <body>
     <div class="container">
         <h1>Name</h1>
-        <input type="text" id="name" placeholder="Enter first name">
+        <input type="text" id="name" placeholder="Enter your name">
         <h1>Instrument</h1>
         <input type="text" id="instrument" placeholder="Enter instrument name">
         <h1>Number of Minutes Practiced</h1>
@@ -74,16 +67,18 @@ permalink: /tracker
         <button id="save-button">Save</button>
         <!-- Weekly Practice Log Display -->
         <div id="weekly-log">
-            <h2>Weekly Instrument  Practice Time  Log</h2>
+            <h2>Weekly Practice Log</h2>
             <table>
                 <thead>
                     <tr>
+                        <th>Name</th>
                         <th>Date</th>
+                        <th>Instrument</th>
                         <th>Practice Time (minutes)</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- Practice log entries will be displayed here -->
+                <tbody id="practice-log-body">
+                    <!-- Study log entries will be displayed here -->
                 </tbody>
             </table>
         </div>
@@ -102,7 +97,12 @@ permalink: /tracker
                 const practiceData = JSON.parse(localStorage.getItem("practiceData")) || {};
                 practiceData[currentDate] = parseInt(practiceTime);
                 localStorage.setItem("practiceData", JSON.stringify(practiceData));
-                alert(`Practice time (${practiceTime} minutes) saved for ${currentDate}`);
+                alert(`Practice time (${practiceTime} minutes) saved for ${currentDate}.`);
+                if (parseInt(practiceTime) < 15) {
+                    alert("Try to practice more tomorrow!");
+                } else {
+                    alert("Great job, keep it up!");
+                }
                 document.getElementById("practice-time").value = "";
                 // Refresh the practice log display
                 displayWeeklyLog();
@@ -110,25 +110,25 @@ permalink: /tracker
                 alert("Please enter a valid practice time.");
             }
         });
-  // Function to display the weekly practice log
+        // Function to display the weekly practice log
         function displayWeeklyLog() {
             const practiceData = JSON.parse(localStorage.getItem("practiceData")) || {};
-            const tableBody = document.querySelector("#weekly-log table tbody");
+            const tableBody = document.querySelector("#practice-log-body");
             tableBody.innerHTML = "";
             for (const date in practiceData) {
                 const row = tableBody.insertRow();
-                const cellDate = row.insertCell(0);
-                const cellTime = row.insertCell(1);
+                const cellName = row.insertCell(0);
+                const cellDate = row.insertCell(1);
+                const cellInstrument = row.insertCell(2);
+                const cellTime = row.insertCell(3);
+                cellName.textContent = document.getElementById("name").value;
                 cellDate.textContent = date;
+                cellInstrument.textContent = document.getElementById("instrument").value;
                 cellTime.textContent = practiceData[date];
             }
         }
-//Call the function to display the weekly practice log when the page loads
+        // Call the function to display the weekly practice log when the page loads
         displayWeeklyLog();
     </script>
-
 </body>
 </html>
-
-
-
