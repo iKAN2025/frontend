@@ -9,7 +9,7 @@ permalink: /tracker
 <!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+ <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Instrument Practice Tracker</title>
     <style>
@@ -67,9 +67,9 @@ permalink: /tracker
 <body>
     <div class="container">
         <h1>Name</h1>
-        <input type="name" id="name" placeholder="Enter first name">
+        <input type="text" id="name" placeholder="Enter first name">
         <h1>Instrument</h1>
-        <input type="instrument" id="instrument" placeholder="Enter instrument name">
+        <input type="text" id="instrument" placeholder="Enter instrument name">
         <h1>Number of Minutes Practiced</h1>
         <input type="number" id="practice-time" placeholder="Enter practice time (minutes)">
         <br><br>
@@ -101,41 +101,50 @@ permalink: /tracker
         // JavaScript to save practice time to local storage
         document.getElementById("save-button").addEventListener("click", function () {
             const practiceTime = document.getElementById("practice-time").value;
-            if (practiceTime !== "") {
+            const name = document.getElementById("name").value;
+            const instrument = document.getElementById("instrument").value;
+            if (practiceTime !== "" && name !== "" && instrument !== "") {
                 const currentDate = new Date().toLocaleDateString();
-                const practiceData = JSON.parse(localStorage.getItem("practiceData")) || {};
-                practiceData[currentDate] = parseInt(practiceTime);
-                localStorage.setItem("practiceData", JSON.stringify(practiceData));
+                const practiceData = JSON.parse(localStorage.getItem(name)) || {};
+                practiceData[currentDate] = {
+                    instrument: instrument,
+                    time: parseInt(practiceTime),
+                };
+                localStorage.setItem(name, JSON.stringify(practiceData));
                 alert(`Practice time (${practiceTime} minutes) saved for ${currentDate}.`);
-            if (parseInt(practiceTime) < 15) {
-                alert("Try to practice more tomorrow!");
+                if (parseInt(practiceTime) < 15) {
+                    alert("Try to practice more tomorrow!");
+                } else {
+                    alert("Great job, keep it up!");
+                }
+                document.getElementById("practice-time").value = "";
+                // Refresh the practice log display
+                displayWeeklyLog();
             } else {
-                alert("Great job, keep it up!");
+                alert("Please enter a valid practice time, name, and instrument.");
             }
-        document.getElementById("practice-time").value = "";
-        // Refresh the practice log display
-        displayWeeklyLog();
-    } else {
-        alert("Please enter a valid practice time.");
-    }
-});
+        });
         // Function to display the weekly practice log
-    function displayWeeklyLog() {
-        const practiceData = JSON.parse(localStorage.getItem("practiceData")) || {};
-        const tableBody = document.querySelector("#weekly-log table tbody");
-        tableBody.innerHTML = "";
-        for (const date in practiceData) {
-            const row = tableBody.insertRow();
-            const cellName = row.insertCell(0);
-            const cellDate = row.insertCell(1);
-            const cellInstrument = row.insertCell(2);
-            const cellTime = row.insertCell(3);
-            cellName.textContent = document.getElementById("name").value;
-            cellDate.textContent = date;
-            cellInstrument.textContent = document.getElementById("instrument").value;
-            cellTime.textContent = practiceData[date];
+        function displayWeeklyLog() {
+            const tableBody = document.querySelector("#weekly-log table tbody");
+            tableBody.innerHTML = "";
+            // Iterate through all local storage keys (which are user names)
+            for (let i = 0; i < localStorage.length; i++) {
+                const name = localStorage.key(i);
+                const practiceData = JSON.parse(localStorage.getItem(name)) || {};
+                for (const date in practiceData) {
+                    const row = tableBody.insertRow();
+                    const cellName = row.insertCell(0);
+                    const cellDate = row.insertCell(1);
+                    const cellInstrument = row.insertCell(2);
+                    const cellTime = row.insertCell(3);
+                    cellName.textContent = name;
+                    cellDate.textContent = date;
+                    cellInstrument.textContent = practiceData[date].instrument;
+                    cellTime.textContent = practiceData[date].time;
+                }
+            }
         }
-    }
         // Call the function to display the weekly practice log when the page loads
         displayWeeklyLog();
     </script>
