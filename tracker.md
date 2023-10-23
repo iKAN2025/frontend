@@ -6,6 +6,7 @@ permalink: /tracker
 <!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
 
 <!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
+<!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +14,7 @@ permalink: /tracker
     <title>Daily Instrument Practice Tracker</title>
     <style>
         body {
-            background-image: url({{site.baseurl}}/images/instrument_gifbg.gif);;
+            background-image: url({{site.baseurl}}/images/celloplaying.gif);;
             background-size: contain;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -135,3 +136,8 @@ permalink: /tracker
             cellTime.textContent = practiceData[date];
         }
     }
+        // Call the function to display the weekly practice log when the page loads
+        displayWeeklyLog();
+    </script>
+</body>
+</html>
