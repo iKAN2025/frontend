@@ -27,6 +27,24 @@
         type: 'line',
         data: practiceData,
         options: {
+            scales: {
+                x: {
+                    type: 'linear',
+                    position: 'bottom',
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Date'
+                    }
+                },
+                y: {
+                    type: 'linear',
+                    position: 'left',
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Minutes Practiced'
+                    }
+                }
+            },
             plugins: {
                 legend: {
                     display: false
