@@ -17,7 +17,7 @@
         }
         .container {
             text-align: center;
-            padding: 50px;
+            padding: 50px;clea
             background-color: rgb(183, 255, 217);
             border-radius: 10px;
             margin: 50px auto;
@@ -75,7 +75,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Name5</th>
                         <th>Date</th>
                         <th>Instrument</th>
                         <th>Practice Time (minutes)</th>
@@ -87,6 +87,7 @@
             </table>
         </div>
     </div>
+    <div id="api-response"></div>
     <!-- Relevant Links -->
     <div style="text-align: center; margin-top: 20px;">
         <a href="https://pianopower.org/16-benefits-of-playing-an-instrument/" target="_blank">Benefits of Practicing</a> |
@@ -94,6 +95,11 @@
     </div>
     <script>
         // JavaScript to save practice time to local storage
+          const resultContainer = document.getElementById("result");
+  // prepare URL's to allow easy switch from deployment and localhost
+  var url = "https://bella-flask-portfolio.stu.nighthawkcodingsociety.com/"
+  // url = "http://localhost:8086/api/users"
+  // Load users on page entry
         document.getElementById("save-button").addEventListener("click", function () {
             const practiceTime = document.getElementById("practice-time").value;
             const name = document.getElementById("name").value;
@@ -120,7 +126,7 @@
             }
         });
         // Function to display the weekly practice log
- function displayWeeklyLog() {
+        function displayWeeklyLog() {
             fetch('https://bella-flask-portfolio.stu.nighthawkcodingsociety.com/api/users')
             .then(response => response.json())
             .then(data => {
@@ -165,8 +171,12 @@
         }
         // Call the function to display the weekly practice log when the page loads
          // prepare HTML result container for new output
-        // Call the function to display the weekly practice log when the page loads
         displayWeeklyLog();
+        //read_users();
+        
+
+      
+
  </script>
 
 
