@@ -1,8 +1,3 @@
----
-layout: default
-title: Student Blog
-permalink: /tracker
----
 <!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
 
 <!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
@@ -126,51 +121,6 @@ permalink: /tracker
         });
         // Function to display the weekly practice log
         function displayWeeklyLog() {
-            var url = "https://flask.nighthawkcodingsociety.com/api/users"
-             const read_options = {
-                method: 'GET', // *GET, POST, PUT, DELETE, etc.
-                mode: 'cors', // no-cors, *cors, same-origin
-                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-                credentials: 'omit', // include, *same-origin, omit
-                 headers: {
-                     'Content-Type': 'application/json'
-                 },
-              };
-                // fetch the data from API
-    fetch(url, read_options)
-      // response is a RESTful "promise" on any successful fetch
-      .then(response => {
-        // check for response errors
-        if (response.status !== 200) {
-            const errorMsg = 'Database read error: ' + response.status;
-            console.log(errorMsg);
-            const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = errorMsg;
-            tr.appendChild(td);
-            resultContainer.appendChild(tr);
-            return;
-        }
-        // valid response will have json data
-        response.json().then(data => {
-            console.log(data);
-            for (let row in data) {
-              console.log(data[row]);
-              add_row(data[row]);
-            }
-        })
-    })
-    // catch fetch errors (ie ACCESS to server blocked)
-    .catch(err => {
-      console.error(err);
-      const tr = document.createElement("tr");
-      const td = document.createElement("td");
-      td.innerHTML = err;
-      tr.appendChild(td);
-      resultContainer.appendChild(tr);
-    });
-  }
-
             const tableBody = document.querySelector("#weekly-log table tbody");
             tableBody.innerHTML = "";
             // Iterate through all local storage keys (which are user names)
@@ -192,68 +142,9 @@ permalink: /tracker
         }
         // Call the function to display the weekly practice log when the page loads
         displayWeeklyLog();
-    </script>
-
------
-
-var url = "https://flask.nighthawkcodingsociety.com/api/users"
-  // url = "http://localhost:8086/api/users"
-
-  // Load users on page entry
-  read_users();
+ </script>
 
 
-  // Display User Table, data is fetched from Backend Database
-  function read_users() {
-    // prepare fetch options
-    const read_options = {
-      method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'omit', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    };
-
-    // fetch the data from API
-    fetch(url, read_options)
-      // response is a RESTful "promise" on any successful fetch
-      .then(response => {
-        // check for response errors
-        if (response.status !== 200) {
-            const errorMsg = 'Database read error: ' + response.status;
-            console.log(errorMsg);
-            const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = errorMsg;
-            tr.appendChild(td);
-            resultContainer.appendChild(tr);
-            return;
-        }
-        // valid response will have json data
-        response.json().then(data => {
-            console.log(data);
-            for (let row in data) {
-              console.log(data[row]);
-              add_row(data[row]);
-            }
-        })
-    })
-    // catch fetch errors (ie ACCESS to server blocked)
-    .catch(err => {
-      console.error(err);
-      const tr = document.createElement("tr");
-      const td = document.createElement("td");
-      td.innerHTML = err;
-      tr.appendChild(td);
-      resultContainer.appendChild(tr);
-    });
-  }
-
-
-
------
     
 </body>
 </html>
