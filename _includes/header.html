@@ -1,5 +1,36 @@
-<header class="site-header">
+<style>
+  /* Add a style block for custom CSS */
+  header.site-header {
+    background-color: #333; /* Change the background color */
+    padding: 10px; /* Add padding to the header */
+  }
 
+  nav ul {
+    list-style-type: none; /* Remove default list styles */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+
+  nav ul li {
+    display: inline-block; /* Display menu items horizontally */
+    margin-right: 10px; /* Add spacing between menu items */
+  }
+
+  nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Change the text color */
+    padding: 8px 12px; /* Add padding to menu items */
+    border-radius: 5px; /* Add rounded corners to menu items */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+
+  nav ul li a:hover {
+    background-color: #555; /* Change background color on hover */
+  }
+</style>
+
+<!-- Your existing HTML code for the header goes here -->
+<header class="site-header">
   <div id="header">
     <nav>
       <ul>
