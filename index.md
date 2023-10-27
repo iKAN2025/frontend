@@ -32,7 +32,7 @@ title: Student Blog
             margin: 20px auto;
             padding: 20px;
             background-color:white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
             overflow: hidden;
         }
