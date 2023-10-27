@@ -126,18 +126,20 @@
             .then(data => {
                 const responseElement = document.getElementById('api-response');
                 const tableBody = document.querySelector("#weekly-log table tbody");
-                //tableBody.innerHTML=JSON.stringify(data, null, 2);
-                //responseElement.innerHTML = JSON.stringify(data, null, 2);
+                // tableBody.innerHTML=JSON.stringify(data, null, 2);
+                // responseElement.innerHTML = JSON.stringify(data, null, 2);
                  data.forEach(item => {
+                    var tracking = JSON.parse(item.tracking);
+                    console.log(tracking);
                     const row = tableBody.insertRow();
                     const idCell = row.insertCell(0);
                     const nameCell = row.insertCell(1);
                     const emailCell = row.insertCell(2);
                     const email2Cell = row.insertCell(3);
-                    idCell.textContent = item.name;
-                    nameCell.textContent = item.age;
-;                   emailCell.textContent = item.tracking;
-                    email2Cell.textContent = item.tracking.practiceTime;
+                    idCell.textContent = tracking.userName;
+                    nameCell.textContent = tracking.practiceDate;
+                    emailCell.textContent = tracking.instrumentName;
+                    email2Cell.textContent = tracking.practiceTime;
                     const nestedArray = item.tracking;                                    
                 });
             })
@@ -167,6 +169,9 @@
          // prepare HTML result container for new output
         // Call the function to display the weekly practice log when the page loads
         displayWeeklyLog();
+
+        
+
  </script>
 
 
