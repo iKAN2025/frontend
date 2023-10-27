@@ -19,7 +19,7 @@ title: Student Blog
             background-color:white;
         }
          header {
-            background-color: #333;
+            background-color: #ffb6c1;
             color: #fff;
             padding: 10px;
             text-align: center;
