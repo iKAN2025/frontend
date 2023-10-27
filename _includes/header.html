@@ -1,46 +1,51 @@
-<style>
-  /* Add a style block for custom CSS */
-  header.site-header {
-    background-color: #fff; /* Change the background color */
-    padding: 10px; /* Add padding to the header */
-  }
-
-  nav ul {
-    list-style-type: none; /* Remove default list styles */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-  }
-
-  nav ul li {
-    display: inline-block; /* Display menu items horizontally */
-    margin-right: 10px; /* Add spacing between menu items */
-  }
-
-  nav ul li a {
-    text-decoration: none; /* Remove underline from links */
-    color: black; /* Change the text color */
-    padding: 8px 12px; /* Add padding to menu items */
-    border-radius: 5px; /* Add rounded corners to menu items */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-  }
-
-  nav ul li a:hover {
-    background-color: #555; /* Change background color on hover */
-  }
-</style>
-
-<!-- Your existing HTML code for the header goes here -->
-<header class="site-header">
-  <div id="header">
-    <nav>
-      <ul>
-        <li class="fork"><a href="{{site.baseurl}}">Home</a></li>
-        <li class="fork"><a href="{{site.baseurl}}/tracker">Tracker</a></li>
-        <li class="fork"><a href="{{site.baseurl}}/graphs">Graphs</a></li>
-        <li class="fork"><a href="{{site.baseurl}}/blogs">Blogs</a></li>
-        <li class="title"><a href="{{site.baseurl}}/help">Helps</a></li>
-        <li class="title"><a href="{{ site.github.repository_url }}#readme">View On GitHub</a></li>
-      </ul>
-    </nav>
-  </div><!-- end header -->
-</header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <title>Instruments Practice Tracker</title>
+    <style>
+        body {
+            font-family: 'Bubblegum Sans', sans-serif; /* Use the Bubblegum Sans font */
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+        }
+        header {
+            background-color: #ffb6c1;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px; /* Rounded border */
+            overflow: hidden;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Rounded border for images */
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your existing HTML content here -->
+</body>
+</html>
