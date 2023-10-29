@@ -19,7 +19,7 @@ title: Student Blog
             background-color:white;
         }
          header {
-            background-color: #333;
+            background-color: #ffb6c1;
             color: #fff;
             padding: 10px;
             text-align: center;
@@ -32,7 +32,7 @@ title: Student Blog
             margin: 20px auto;
             padding: 20px;
             background-color:white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
             overflow: hidden;
         }
@@ -49,7 +49,7 @@ title: Student Blog
 </head>
 <body>
     <header>
-        <h1>Welcome to the Musical Instrument Practice Tracker. Learn about musical instruments below.</h1>
+        <h1>Welcome to the Musical Instrument Practice Tracker. Learn about types of musical instruments below.</h1>
     </header>
 
   <section id="string">
