@@ -49,6 +49,10 @@ title: Student Blog
 </head>
 <body>
 
+<header>
+        <h1>Welcome to the Musical Instrument Practice Tracker. Learn about types of musical instruments below.</h1>
+    </header>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -97,9 +101,6 @@ title: Student Blog
 
 </body>
 </html>
-<header>
-        <h1>Welcome to the Musical Instrument Practice Tracker. Learn about types of musical instruments below.</h1>
-    </header>
 
   <section id="string">
         <h2>String Instruments</h2>
