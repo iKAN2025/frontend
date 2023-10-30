@@ -68,7 +68,7 @@
         h1 {
             color: #333;
         }
-        #study-time {
+        #practice-time {
             font-size: 24px;
             padding: 10px;
             width: 100%;
@@ -106,7 +106,7 @@
         <h1>Name</h1>
         <input type="text" id="name" placeholder="Enter first name" required>
         <h1>Date of Birth </h1>
-        <input type="text" id="dob" placeholder="Enter date of birth" required>
+        <input type="text" id="dob" placeholder="MM/DD/YYYY" required>
         <h1>Instrument</h1>
         <input type="text" id="instrument" placeholder="Enter instrument name" required>
         <h1>Number of Minutes Practiced</h1>
@@ -142,8 +142,8 @@
         document.getElementById("save-button").addEventListener("click", async function () {
             const practiceTime = document.getElementById("practice-time").value;
             const name = document.getElementById("name").value;
-            const instrument = document.getElementById("instrument").value;
             const dob = document.getElementById("dob").value;
+            const instrument = document.getElementById("instrument").value;
             const currentDate = new Date().toLocaleDateString();
             if (practiceTime !== "" && name !== "" && instrument !== "") {
                 const practiceData = JSON.parse(localStorage.getItem(name)) || {};
