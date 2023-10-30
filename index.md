@@ -94,7 +94,6 @@ title: Student Blog
   </a>
 </div>
   </div>
-</div>
 
 </body>
 </html>
