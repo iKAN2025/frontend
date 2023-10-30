@@ -49,7 +49,7 @@ permalink: /graphs
 
 <style>
     .practice-heading {
-        font-family: 'Pacifico', cursive;
+        font-family: cursive;
         color: purple; 
     }
 </style>
