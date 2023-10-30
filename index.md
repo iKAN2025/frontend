@@ -128,7 +128,7 @@ title: Student Blog
         <p>Electronic instruments produce sound using electronic circuits or computer technology. Examples include synthesizers, electronic drums, and digital pianos.</p>
         <!-- Add more information and images about electronic instruments -->
         <img src="https://www.metromusicmakers.com/wp-content/uploads/hubspot/preview.jpg?x90853"
-          width="100"
+          width="200"
           height="auto" />
         
  </section>
