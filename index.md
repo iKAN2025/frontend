@@ -50,7 +50,7 @@ title: Student Blog
 <body>
 
 <header>
-        <h1>Welcome to the Musical Instrument Practice Tracker. Learn about types of musical instruments below.</h1>
+        <h1><b>Welcome to the Musical Instrument Practice Tracker. Learn about types of musical instruments below.</b></h1>
     </header>
 
 <html lang="en">
@@ -103,28 +103,28 @@ title: Student Blog
 </html>
 
   <section id="string">
-        <h2>String Instruments</h2>
+        <h2><b>String Instruments</b></h2>
         <p>String instruments produce sound by vibrating strings. Examples include guitars, violins, cellos, and harps.</p>
         <!-- Add more information and images about string instruments -->
         <img src="./images/string instruments.jpg">
     </section>
 
    <section id="wind">
-        <h2>Wind Instruments</h2>
+        <h2><b>Wind Instruments</b></h2>
         <p>Wind instruments produce sound by vibrating air columns. Examples include flutes, clarinets, trumpets, and saxophones.</p>
         <!-- Add more information and images about wind instruments -->
         <img src="./images/wind instruments.jpg">
     </section>
 
   <section id="percussion">
-        <h2>Percussion Instruments</h2>
+        <h2><b>Percussion Instruments</b></h2>
         <p>Percussion instruments produce sound by being struck, shaken, or scraped. Examples include drums, tambourines, maracas, and xylophones.</p>
         <!-- Add more information and images about percussion instruments -->
         <img src="./images/percussion instruments.jpg">
     </section>
 
   <section id="electronic">
-        <h2>Electronic Instruments</h2>
+        <h2><b>Electronic Instruments</b></h2>
         <p>Electronic instruments produce sound using electronic circuits or computer technology. Examples include synthesizers, electronic drums, and digital pianos.</p>
         <!-- Add more information and images about electronic instruments -->
         <img src="https://www.metromusicmakers.com/wp-content/uploads/hubspot/preview.jpg?x90853"
