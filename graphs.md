@@ -47,14 +47,29 @@ permalink: /graphs
 </head>
 
 
-Eun's Practice
-<iframe src="/frontend/passionproject/eun's_graph.html" width="600" height="350"></iframe>
+<style>
+    .practice-heading {
+        font-family: 'Pacifico', cursive;
+        color: purple; 
+    }
+</style>
 
-Bella's Practice
-<iframe src="/frontend/passionproject/bella's_graph.html" width="600" height="350"></iframe>
+<div class="practice-heading">
+    Eun's Practice
+    <iframe src="/frontend/passionproject/eun's_graph.html" width="600" height="350"></iframe>
+</div>
 
-Lakshanya's Practice
-<iframe src="/frontend/passionproject/lakshanya's_graph.html" width="600" height="350"></iframe>
+<div class="practice-heading">
+    Bella's Practice
+    <iframe src="/frontend/passionproject/bella's_graph.html" width="600" height="350"></iframe>
+</div>
 
-Avanthika's Practice
-<iframe src="/frontend/passionproject/avanthika's_graph.html" width="600" height="350"></iframe>
+<div class="practice-heading">
+    Lakshanya's Practice
+    <iframe src="/frontend/passionproject/lakshanya's_graph.html" width="600" height="350"></iframe>
+</div>
+
+<div class="practice-heading">
+    Avanthika's Practice
+    <iframe src="/frontend/passionproject/avanthika's_graph.html" width="600" height="350"></iframe>
+</div>
