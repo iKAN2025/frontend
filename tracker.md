@@ -134,10 +134,11 @@
         </div>
     </div>
     <!-- Relevant Links -->
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="https://pianopower.org/16-benefits-of-playing-an-instrument/" target="_blank">Benefits of Practicing</a> |
-        <a href="https://www.betterup.com/blog/15-ways-to-improve-your-focus-and-concentration-skills" target="_blank">How to Increase Concentration</a>
-    </div>
+<div style="text-align: center; margin-top: 20px;">
+    <a href="https://pianopower.org/16-benefits-of-playing-an-instrument/" target="_blank" style="color: purple;">Benefits of Practicing</a> |
+    <a href="https://www.betterup.com/blog/15-ways-to-improve-your-focus-and-concentration-skills" target="_blank" style="color: purple;">How to Increase Concentration</a>
+</div>
+
     <script>
         // JavaScript to save practice time to local storage
         document.getElementById("save-button").addEventListener("click", async function () {
