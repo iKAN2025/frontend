@@ -34,6 +34,7 @@
             overflow: hidden;
         }
         footer {
+            <p>Team LEIA</p>
             background-color: #333;
             color: #fff;
             text-align: center;
