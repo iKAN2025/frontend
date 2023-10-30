@@ -54,6 +54,15 @@ permalink: /graphs
     }
 </style>
 
+<style>
+    .practice-heading {
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        font-size: 24px; 
+        color: purple
+    }
+</style>
+
 <div class="practice-heading">
     Eun's Practice
     <iframe src="/frontend/passionproject/eun's_graph.html" width="600" height="350"></iframe>
