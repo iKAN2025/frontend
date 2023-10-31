@@ -48,18 +48,31 @@ title: Meet the Team
 
 # Meet the Team!
 
+
 ## Lakshanya Sankaran
+
 - Lakshanya is the Scrum Master and Frontend Developer
+
 - She has played the flute for 10 years
 
+
 ## Eunseo Lim
+
 - Eun is a Frontend Developer
+
 - She has played the piano and violin for 10 years
 
+
+
 ## Isabel Marilla
+
 - Bella is a Backend Developer and DevOps
+
 - She has played the piano for 5 years
 
+
 ## Avanthika Daita
+
 - Avanthika is a Backend Developer
+
 - She has played the guitar for 4 years
