@@ -46,7 +46,7 @@ title: Meet the Team
     </style>
 </head>
 
-# Meet the Team!
+<h1> Meet the Team! </h1>
 
 <br>
 
@@ -58,7 +58,7 @@ title: Meet the Team
 
 <br>
 
-## Eunseo Lim
+<h2> Eunseo Lim </h2>
 
 - Eun is a Frontend Developer
 
@@ -66,7 +66,7 @@ title: Meet the Team
 
 <br>
 
-## Isabel Marilla
+<h2> Isabel Marilla </h2>
 
 - Bella is a Backend Developer and DevOps
 
@@ -74,7 +74,7 @@ title: Meet the Team
 
 <br>
 
-## Avanthika Daita
+<h2> Avanthika Daita </h2>
 
 - Avanthika is a Backend Developer
 
