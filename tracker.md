@@ -4,6 +4,8 @@
 <!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
 
 {% include passionheader.html %}
+
+<html>
 <body>
     <div class="container">
         <h1>Name</h1>
