@@ -48,6 +48,7 @@ title: Meet the Team
 
 # Meet the Team!
 
+<br>
 
 ## Lakshanya Sankaran
 
@@ -55,6 +56,7 @@ title: Meet the Team
 
 - She has played the flute for 10 years
 
+<br>
 
 ## Eunseo Lim
 
@@ -62,7 +64,7 @@ title: Meet the Team
 
 - She has played the piano and violin for 10 years
 
-
+<br>
 
 ## Isabel Marilla
 
@@ -70,6 +72,7 @@ title: Meet the Team
 
 - She has played the piano for 5 years
 
+<br>
 
 ## Avanthika Daita
 
