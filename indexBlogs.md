@@ -49,7 +49,7 @@ title: Blogs
 # Meet the Team!
 
 ## Lakshanya Sankaran
-- Lakshanya is the Scrum Master
+- Lakshanya is the Scrum Master and Frontend Developer
 - She has played the flute for 10 years
 
 ## Eunseo Lim
@@ -57,7 +57,7 @@ title: Blogs
 - She has played the piano and violin for 10 years
 
 ## Isabel Marilla
-- Bella is a Backend Developer
+- Bella is a Backend Developer and DevOps
 - She has played the piano for 5 years
 
 ## Avanthika Daita
