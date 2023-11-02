@@ -131,67 +131,68 @@
             });
     }
     populateNameDropdown()
-    function updateTracking() {
-        const selectedUserId = document.getElementById('name').value;
-        const name = document.getElementById('name').options[document.getElementById('name').selectedIndex].text;
-        const instrument = document.getElementById('instrument').value;
-        const practiceTime = document.getElementById('practice-time').value;
-        const currentDate = new Date().toLocaleDateString();
-        if (practiceTime !== "" && name !== "" && instrument !== "") {
-            // Make an API request to update the user's tracking data
-            const trackingData = {
-                userName: name,
-                instrumentName: instrument,
-                practiceDate: currentDate,
-                practiceTime: practiceTime
-            };
-            const data2 = {  //the other data that needs to be sent
-                     "id": selectedUserId,
-                     "name": name,
-                     "uid": "life", 
-                     "dob": "10/12/13",
-                     "age": "16",
-                     "tracking": trackingData //tracking string
-                };
-            var jsonData = JSON.stringify(data2);
-            fetch(`http://127.0.0.1:8240/api/users/${selectedUserId}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: jsonData
+   function updateTracking() {
+    const selectedUserId = document.getElementById('name').value;
+    const name = document.getElementById('name').options[document.getElementById('name').selectedIndex].text;
+    const instrument = document.getElementById('instrument').value;
+    const practiceTime = document.getElementById('practice-time').value;
+    const currentDate = new Date().toLocaleDateString();
+    if (practiceTime !== "" && name !== "" && instrument !== "") {
+        fetch(`http://127.0.0.1:8240/api/users/${selectedUserId}`) //comment
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
             })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('User tracking data updated:', data);
-                })
-                .catch(error => {
-                    console.error('Error updating user tracking data:', error);
-                });
-        } else {
-            alert("Please enter a valid practice time, name, and instrument.");
-        }
-    }
-  document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('save-button').addEventListener('click', function () {
-                updateTracking();
-            });
-            });
-
- </script>
-
-
-<!--     
-                const originalTrackingData = data.tracking || [];
+            .then(data => {
+                // Combine old and new tracking data
+                const originalTrackingData = Array.isArray(data.tracking) ? data.tracking : [];
                 const newTrackingData = {
                     userName: name,
                     instrumentName: instrument,
                     practiceDate: currentDate,
                     practiceTime: practiceTime
                 };
-                const updatedTrackingData = [...originalTrackingData, newTrackingData]; -->
+                const updatedTrackingData = [...originalTrackingData, newTrackingData];
+                const data2 = {
+                    "id": selectedUserId,
+                    "name": name,
+                    "uid": "life",
+                    "dob": "10/12/13",
+                    "age": "16",
+                    "tracking": updatedTrackingData // Include updated tracking data
+                };
+                var jsonData = JSON.stringify(data2);
+                fetch(`http://127.0.0.1:8240/api/users/${selectedUserId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: jsonData
+                }) //get method not working
+                    .then(response => {
+                        if (!response.ok) {
+                            console.log('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('User tracking data updated:', data);
+                    })
+                    .catch(error => {
+                        console.error('Error updating user tracking data:', error);
+                    });
+            })
+            .catch(error => {
+                console.error('Error fetching user data:', error);
+            });
+    } else {
+        alert("Please enter a valid practice time, name, and instrument.");
+    }
+}
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('save-button').addEventListener('click', function () {
+        updateTracking();
+    });
+});

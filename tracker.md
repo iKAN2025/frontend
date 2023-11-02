@@ -162,66 +162,43 @@
         //The .then method is used to handle the response from the API request. It is a part of JavaScript's Promise-based architecture, which allows asynchronous operations to be handled in a more structured manner.
         //Inside the first .then block, the response from the API is converted to JSON format using response.json(). This is assuming that the response from the server is in JSON format.
         //The code then proceeds to update the content of the web page. It first retrieves a DOM element with the ID 'api-response' and a table body element inside a table with the ID 'weekly-log'. These elements are going to be used to display the data retrieved from the API.
- function displayWeeklyLog() {
-          //alert('Calling displayweekly function');
-          fetch(url) 
-          //fetch('https://bella-flask-portfolio.stu.nighthawkcodingsociety.com/api/users') //get api call
-            .then(response => response.json())
-            .then(data => {
-                const responseElement = document.getElementById('api-response');
-                const tableBody = document.querySelector("#weekly-log table tbody");
-                // tableBody.innerHTML=JSON.stringify(data, null, 2);
-                // responseElement.innerHTML = JSON.stringify(data, null, 2);
-                 data.forEach(item => {
-                    try {
-                         var tracking2 = JSON.parse(item.tracking); //try and catch for json data
-                     console.log(data);
-                        }
-                        catch (e) {
-                        var tracking2 = item.tracking;
-                        }
-                    console.log(tracking2);
-                    const row = tableBody.insertRow();
-                    const nameCell = row.insertCell(0);
-                    const dobCell = row.insertCell(1);
-                    const practicedateCell = row.insertCell(2);
-                    const instrumentCell = row.insertCell(3);
-                    const practicetimeCell = row.insertCell(4);
-                    nameCell.textContent = tracking2.userName;
-                    dobCell.textContent = item.dob;
-                    practicedateCell.textContent = tracking2.practiceDate;
-                    instrumentCell.textContent = tracking2.instrumentName;    
-                    practicetimeCell.textContent = tracking2.practiceTime;                             
-                });
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert(error);
-            });
+function displayWeeklyLog() {
+    fetch(url) // Replace 'url' with the actual API endpoint
+        .then(response => response.json())
+        .then(data => {
             const tableBody = document.querySelector("#weekly-log table tbody");
-            tableBody.innerHTML = "";
-            // Iterate through all local storage keys (which are user names)            
-            // for (let i = 0; i < localStorage.length; i++) {
-            //     const name = localStorage.key(i);
-            //     const practiceData = JSON.parse(localStorage.getItem(name)) || {};
-            //     for (const date in practiceData) {
-            //         const row = tableBody.insertRow();
-            //         const cellName = row.insertCell();
-            //         const cellDOB = row.insertCell(1);
-            //         const cellDate = row.insertCell(2);
-            //         const cellInstrument = row.insertCell(3);
-            //         const cellTime = row.insertCell(4);
-            //         cellName.textContent = name;
-            //         cellDOB.textContent = practiceData[date].dob;
-            //         cellDate.textContent = date;
-            //         cellInstrument.textContent = practiceData[date].instrument;
-            //         cellTime.textContent = practiceData[date].time;
-            //     }
-            // }            
-        }       
-        // Call the function to display the weekly practice log when the page loads
-         // prepare HTML result container for new output
-        // Call the function to display the weekly practice log when the page loads
+            tableBody.innerHTML = ""; // Clear the existing table data
+            data.forEach(user => {
+                if (Array.isArray(user.tracking)) {
+                    user.tracking.forEach(trackingItem => {
+                        const tracking = parseTracking(trackingItem);
+                        const row = tableBody.insertRow();
+                        const nameCell = row.insertCell(0);
+                        const dobCell = row.insertCell(1);
+                        const practicedateCell = row.insertCell(2);
+                        const instrumentCell = row.insertCell(3);
+                        const practicetimeCell = row.insertCell(4);
+                        nameCell.textContent = user.name;
+                        dobCell.textContent = user.dob;
+                        practicedateCell.textContent = tracking.practiceDate;
+                        instrumentCell.textContent = tracking.instrumentName;
+                        practicetimeCell.textContent = tracking.practiceTime;
+                    });
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert(error);
+        });
+}
+function parseTracking(tracking) {
+    try {
+        return JSON.parse(tracking);
+    } catch (e) {
+        return tracking;
+    }
+}
         displayWeeklyLog();
         // syntactic sugar approach!  is syntax within a programming language that is designed to make things easier to read or to express. It makes the language "sweeter" for human use: things can be expressed more clearly, more concisely, or in an alternative style that some may prefer.
         async function postToAPI(jsonData) {
