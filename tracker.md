@@ -54,7 +54,7 @@
         .container {
             text-align: center;
             padding: 50px;
-            background-color: rgb(183, 255, 217);
+            background-color: rgb(255, 182, 193);
             border-radius: 10px;
             margin: 50px auto;
             max-width: 600px;
