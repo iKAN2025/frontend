@@ -71,7 +71,7 @@
 <body>
     <div class="container">
         <h1>Name</h1>
-        <div class="dropdown" onchange="populatetracking();">
+        <div class="dropdown">
             <select id="name">
                 <option value="">Select a Name</option>
                 <!-- Populate dropdown options dynamically using JavaScript -->
@@ -107,16 +107,6 @@
         <a href="https://www.betterup.com/blog/15-ways-to-improve-your-focus-and-concentration-skills" target="_blank">How to Increase Concentration</a>
     </div>
 <script>
-
-    function populatetracking () {
-        alert ("populatetracking");
-        var e = document.getElementById("name");
-        var value = e.value;
-        var text = e.options[e.selectedIndex].text;
-
-
-
-    }
     function populateNameDropdown() {
         // Make an API request to fetch user names
         // Replace this with your actual API endpoint

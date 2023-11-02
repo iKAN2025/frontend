@@ -119,7 +119,7 @@
                 } else {
                     alert("Great job, keep it up!");
                 }
-                 // Create a JSON object for tracking data
+                 // Create a JSON object for tracking data: How do I add tracking data for each user seperately????/
                     var tracking_string = { 
                      "userName": name, 
                      "instrumentName": instrument,
@@ -185,7 +185,7 @@
                     const instrumentCell = row.insertCell(3);
                     const practicetimeCell = row.insertCell(4);
                     nameCell.textContent = tracking2.userName;
-                    dobCell.textContent = item.dob;
+                    dobCell.textContent = practiceData[date].dob;
                     practicedateCell.textContent = tracking2.practiceDate;
                     instrumentCell.textContent = tracking2.instrumentName;    
                     practicetimeCell.textContent = tracking2.practiceTime;                             
