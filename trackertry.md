@@ -41,6 +41,63 @@
             width: 100%;
             bottom: 0;
         }
+         body {
+            background-image: url({{site.baseurl}}/images/celloplaying.gif);;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+            background-color: rgb(255, 182, 193);
+            border-radius: 10px;
+            margin: 50px auto;
+            max-width: 600px;
+        }
+        h1 {
+            color: #333;
+        }
+        #study-time {
+            font-size: 24px;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: center;
+        }
+        #save-button {
+            background-color: #8257B4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        /* Style for the weekly instrument practice log */
+        #weekly-log {
+            text-align: left;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        }
+        #weekly-log table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #weekly-log th, #weekly-log td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .dropdown {
+            display: inline-block;
+            width: 100%;
+        }
+        .dropdown select {
+            width: 100%;
+            padding: 10px;
+        }
 
 </style>
 </head>
