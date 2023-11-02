@@ -196,3 +196,41 @@ document.addEventListener('DOMContentLoaded', function () {
         updateTracking();
     });
 });
+function displayWeeklyLog() {
+    fetch(url) // Replace 'url' with the actual API endpoint
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.querySelector("#weekly-log table tbody");
+            tableBody.innerHTML = ""; // Clear the existing table data
+            data.forEach(user => {
+                if (Array.isArray(user.tracking)) {
+                    user.tracking.forEach(trackingItem => {
+                        const tracking = parseTracking(trackingItem);
+                        const row = tableBody.insertRow();
+                        const nameCell = row.insertCell(0);
+                        const dobCell = row.insertCell(1);
+                        const practicedateCell = row.insertCell(2);
+                        const instrumentCell = row.insertCell(3);
+                        const practicetimeCell = row.insertCell(4);
+                        nameCell.textContent = user.name;
+                        dobCell.textContent = user.dob;
+                        practicedateCell.textContent = tracking.practiceDate;
+                        instrumentCell.textContent = tracking.instrumentName;
+                        practicetimeCell.textContent = tracking.practiceTime;
+                    });
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert(error);
+        });
+}
+function parseTracking(tracking) {
+    try {
+        return JSON.parse(tracking);
+    } catch (e) {
+        return tracking;
+    }
+}
+        displayWeeklyLog();
