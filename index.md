@@ -2,8 +2,6 @@
 layout: default
 title: Student Blog
 ---
-
-{% include passionheader.html %}
 <body>
 
 <header>

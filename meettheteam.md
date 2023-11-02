@@ -4,7 +4,6 @@ permalink: /meettheteam
 title: Meet the Team
 ---
 
-{% include passionheader.html %}
 
 <h1> Meet the Team! </h1>
 

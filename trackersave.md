@@ -66,7 +66,7 @@
             padding: 10px;
         }
 
-    </style>
+</style>
 </head>
 <body>
     <div class="container">
@@ -110,7 +110,6 @@
     function populateNameDropdown() {
         // Make an API request to fetch user names
         // Replace this with your actual API endpoint
-        alert('Click on the populatedropdown');
         fetch('http://127.0.0.1:8240/api/users/')
             .then(response => {
                 if (!response.ok) {

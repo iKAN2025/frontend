@@ -4,8 +4,6 @@ title: Student Blog
 permalink: /graphs
 ---
 
-{% include passionheader.html %}
-
 
 <style>
     .practice-heading {
