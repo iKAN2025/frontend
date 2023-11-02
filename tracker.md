@@ -1,9 +1,12 @@
+---
+layout: passionheader
+title: Create User
+---
+
 <!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
 
 <!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
 <!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
-
-{% include passionheader.html %}
 
 <html>
 <body>
@@ -42,7 +45,6 @@
     <a href="https://pianopower.org/16-benefits-of-playing-an-instrument/" target="_blank" style="color: purple;">Benefits of Practicing</a> |
     <a href="https://www.betterup.com/blog/15-ways-to-improve-your-focus-and-concentration-skills" target="_blank" style="color: purple;">How to Increase Concentration</a>
 </div>
-
     <script>
          const url = "http://127.0.0.1:8240/api/users/"   
         // JavaScript to save practice time to local storage
