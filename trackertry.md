@@ -8,6 +8,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Instrument Practice Tracker</title>
     <style>
+       <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color:white;
+        }
+         header {
+            background-color: #ffb6c1;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color:white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Instrument Practice Tracker</title>
+    <style>
         body {
             background-image: url({{site.baseurl}}/images/celloplaying.gif);;
             background-size: contain;
@@ -18,7 +59,7 @@
         .container {
             text-align: center;
             padding: 50px;
-            background-color: rgb(183, 255, 217);
+            background-color: rgb(255, 182, 193);
             border-radius: 10px;
             margin: 50px auto;
             max-width: 600px;
