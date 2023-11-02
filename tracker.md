@@ -2,69 +2,16 @@
 
 <!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
 <!-- put your HTML code in this cell, Make sure to press the Run button to see your results below -->
-<html lang="en">
-<head>
- <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Instrument Practice Tracker</title>
-    <style>
-        body {
-            background-image: url({{site.baseurl}}/images/celloplaying.gif);;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            font-family: 'Segoe UI', sans-serif;
-        }
-        .container {
-            text-align: center;
-            padding: 50px;
-            background-color: rgb(183, 255, 217);
-            border-radius: 10px;
-            margin: 50px auto;
-            max-width: 600px;
-        }
-        h1 {
-            color: #333;
-        }
-        #study-time {
-            font-size: 24px;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: center;
-        }
-        #save-button {
-            background-color: #8257B4;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        /* Style for the weekly instrument practice log */
-        #weekly-log {
-            text-align: left;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-        }
-        #weekly-log table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        #weekly-log th, #weekly-log td {
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-        }
-    </style>
-</head>
+
+{% include passionheader.html %}
+
+<html>
 <body>
     <div class="container">
         <h1>Name</h1>
         <input type="text" id="name" placeholder="Enter first name" required>
         <h1>Date of Birth </h1>
-        <input type="text" id="dob" placeholder="Enter date of birth" required>
+        <input type="text" id="dob" placeholder="MM/DD/YYYY" required>
         <h1>Instrument</h1>
         <input type="text" id="instrument" placeholder="Enter instrument name" required>
         <h1>Number of Minutes Practiced</h1>
@@ -91,10 +38,11 @@
         </div>
     </div>
     <!-- Relevant Links -->
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="https://pianopower.org/16-benefits-of-playing-an-instrument/" target="_blank">Benefits of Practicing</a> |
-        <a href="https://www.betterup.com/blog/15-ways-to-improve-your-focus-and-concentration-skills" target="_blank">How to Increase Concentration</a>
-    </div>
+<div style="text-align: center; margin-top: 20px;">
+    <a href="https://pianopower.org/16-benefits-of-playing-an-instrument/" target="_blank" style="color: purple;">Benefits of Practicing</a> |
+    <a href="https://www.betterup.com/blog/15-ways-to-improve-your-focus-and-concentration-skills" target="_blank" style="color: purple;">How to Increase Concentration</a>
+</div>
+
     <script>
          const url = "http://127.0.0.1:8240/api/users/"   
         // JavaScript to save practice time to local storage
@@ -102,8 +50,8 @@
             //alert('Saving function');
             const practiceTime = document.getElementById("practice-time").value;
             const name = document.getElementById("name").value;
-            const instrument = document.getElementById("instrument").value;
             const dob = document.getElementById("dob").value;
+            const instrument = document.getElementById("instrument").value;
             const currentDate = new Date().toLocaleDateString();
             if (practiceTime !== "" && name !== "" && instrument !== "") {
                 const practiceData = JSON.parse(localStorage.getItem(name)) || {};

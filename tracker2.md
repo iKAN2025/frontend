@@ -57,15 +57,6 @@
             padding: 8px;
             border-bottom: 1px solid #ddd;
         }
-        .dropdown {
-            display: inline-block;
-            width: 100%;
-        }
-        .dropdown select {
-            width: 100%;
-            padding: 10px;
-        }
-
     </style>
 </head>
 <body>
