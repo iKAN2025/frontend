@@ -95,8 +95,6 @@ title: Student Blog
         }
     </style>
 
-</body>
-</html>
 
   <section id="string">
         <h2><b>String Instruments</b></h2>
