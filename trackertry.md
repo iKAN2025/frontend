@@ -191,11 +191,7 @@
         alert("Please enter a valid practice time, name, and instrument.");
     }
 }
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('save-button').addEventListener('click', function () {
-        updateTracking();
-    });
-});
+const url = "http://127.0.0.1:8240/api/users/"   
 function displayWeeklyLog() {
     fetch(url) // Replace 'url' with the actual API endpoint
         .then(response => response.json())
@@ -234,3 +230,8 @@ function parseTracking(tracking) {
     }
 }
         displayWeeklyLog();
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('save-button').addEventListener('click', function () {
+        updateTracking();
+    });
+});
